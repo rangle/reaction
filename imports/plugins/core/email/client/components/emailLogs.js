@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from "react";
 import moment from "moment";
-import { Card, CardHeader, CardBody, CardGroup, Icon, Loading } from "/imports/plugins/core/ui/client/components";
-import MeteorGriddle from "/imports/plugins/core/ui-grid/client/griddle";
+import { Card, CardHeader, CardBody, CardGroup, Icon, Loading, Table } from "/imports/plugins/core/ui/client/components";
 import { Jobs } from "/lib/collections";
 import { i18next } from "/client/api";
 import "./emailConfig.css";
@@ -80,7 +79,7 @@ class EmailLogs extends Component {
 
 
     return (
-      <MeteorGriddle
+      <Table
         publication="Emails"
         collection={Jobs}
         matchingResultsCount="emails-count"
