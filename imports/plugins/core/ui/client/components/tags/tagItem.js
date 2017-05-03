@@ -196,8 +196,8 @@ Template.tagBlank.helpers({
     const instance = Template.instance();
 
     return createAutosuggestInput(instance, {
-      i18nPlaceholderKey: "tags.addTag",
-      i18nPlaceholderValue: "Add Tag",
+      i18nPlaceholderKey: "tags.addTagddd",
+      i18nPlaceholderValue: "Add asdafsdfsdafasdfsdfads",
       onUpdateCallback: instance.submitInput
     });
   }

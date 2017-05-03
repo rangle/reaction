@@ -10,11 +10,11 @@
               <a
                 aria-controls="{{label}}"
                 aria-expanded="true"
-                data-i18n="orderWorkflow.fulfillment"
+                data-i18n="admin.orderWorkflow.fulfillment"
                 data-parent="#core-order-workflow-accordion"
                 data-toggle="collapse"
                 href="#{{template}}-panel"
-                role="button">Fulfillment {{fulfillmentNumber @index}}</a>
+                role="button">Fulfillment GEKOOOOOOOOOO{{fulfillmentNumber @index}}</a>
 
               {{!--
               <span class="pull-right">
@@ -28,9 +28,13 @@
           </div>
 
           {{#each reactionTemplate workflow="coreOrderShipmentWorkflow"}}
+            {{> Template.dynamic template=template data=(orderFulfillmentData ../_id shipment) }}
+          {{/each}}
+          {{#each reactionTemplate workflow="coreOrderShipmentWorkflow"}}
+            {{> Template.dynamic template=template data=(orderFulfillmentData ../_id shipment) }}
             <div aria-labelledby="{{template}}" class="panel panel-default" id="{{template}}-panel" role="tabpanel">
               <div class="panel-heading">
-                <h3 class="panel-title" data-i18n="orderWorkflow.{{toCamelCase label}}"><strong>{{label}}</strong></h3>
+                <h3 class="panel-title" data-i18n="admin.orderWorkflow.{{toCamelCase label}}dsafsdf"><strong>{{label}} bursdafsf</strong></h3>
               </div>
               <div class="panel-body">
                 {{> Template.dynamic template=template data=(orderFulfillmentData ../_id shipment) }}

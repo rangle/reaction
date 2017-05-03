@@ -5,6 +5,8 @@ import { Media } from "/lib/collections";
 import { Loading } from "/imports/plugins/core/ui/client/components";
 import { TranslationProvider } from "/imports/plugins/core/ui/client/providers";
 import LineItems from "../components/lineItems.js";
+import { Card, CardHeader, CardBody, CardGroup, Metadata, TextField, Translation, Select } from "/imports/plugins/core/ui/client/components";
+
 
 class LineItemsContainer extends Component {
   static propTypes = {
@@ -76,15 +78,29 @@ class LineItemsContainer extends Component {
     const { invoice, uniqueItems } = this.props;
     return (
       <TranslationProvider>
-        <LineItems
-          onClose={this.handleClose}
-          invoice={invoice}
-          isClosed={this.state.isClosed}
-          isExpanded={this.isExpanded}
-          displayMedia={this.handleDisplayMedia}
-          handleClick={this.handleClick}
-          uniqueItems={uniqueItems}
-        />
+        <CardGroup>
+          <Card
+            expanded={true}
+          >
+            <CardHeader
+              actAsExpander={true}
+              i18nKeyTitle="admin.settings.mailProviderdddd"
+              title="woof"
+            />
+            <CardBody expandable={true}>
+              <LineItems
+                onClose={this.handleClose}
+                invoice={invoice}
+                isClosed={this.state.isClosed}
+                isExpanded={this.isExpanded}
+                displayMedia={this.handleDisplayMedia}
+                handleClick={this.handleClick}
+                uniqueItems={uniqueItems}
+              />
+            </CardBody>
+          </Card>
+        </CardGroup>
+
       </TranslationProvider>
     );
   }

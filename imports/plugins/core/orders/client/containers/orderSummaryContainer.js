@@ -5,6 +5,8 @@ import { composeWithTracker } from "/lib/api/compose";
 import { Accounts, Orders } from "/lib/collections";
 import { i18next } from "/client/api";
 import OrderSummary from "../components/orderSummary";
+import { Card, CardHeader, CardBody, CardGroup } from "/imports/plugins/core/ui/client/components";
+import { TranslationProvider } from "/imports/plugins/core/ui/client/providers";
 
 class OrderSummaryContainer extends Component {
   static propTypes = {
@@ -97,20 +99,36 @@ class OrderSummaryContainer extends Component {
       return { shippingLabelUrl, customsLabelUrl };
     }
 
+
     return false;
   }
 
   render() {
+    console.log("props", this.props);
     return (
-      <div>
-        <OrderSummary
-          {...this.props}
-          dateFormat={this.dateFormat}
-          tracking={this.tracking}
-          shipmentStatus={this.shipmentStatus}
-          printableLabels={this.printableLabels}
-        />
-      </div>
+      <TranslationProvider>
+        <CardGroup>
+          <Card
+            expanded={true}
+          >
+            <CardHeader
+              actAsExpander={true}
+              i18nKeyTitle="admin.orderWorkflow.summary"
+              title="Summary"
+            />
+            <CardBody expandable={true}>
+              <OrderSummary
+                {...this.props}
+                dateFormat={this.dateFormat}
+                tracking={this.tracking}
+                shipmentStatus={this.shipmentStatus}
+                printableLabels={this.printableLabels}
+              />
+            console.log("this.props", this.props);
+            </CardBody>
+          </Card>
+        </CardGroup>
+      </TranslationProvider>
     );
   }
 }

@@ -36,8 +36,8 @@ class Tag extends Component {
   }
 
   get inputPlaceholder() {
-    return i18next.t(this.props.i18nKeyInputPlaceholder || "tags.tagName", {
-      defaultValue: this.props.inputPlaceholder || "Tag Name"
+    return i18next.t(this.props.i18nKeyInputPlaceholder || "tags.tagNamessssss", {
+      defaultValue: this.props.inputPlaceholder || "Tag Name 1234433434"
     });
   }
 
